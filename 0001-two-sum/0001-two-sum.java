@@ -12,7 +12,7 @@ class Solution {
                 if (nums[i]+nums[j]==target){
                     finalAnswer[0]= i;
                     finalAnswer[1]= j;
-                    break;
+                    return finalAnswer;
                 } else{
                     j++;
                 }
