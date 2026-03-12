@@ -1,28 +1,17 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        ArrayList<Integer> digitArray = new ArrayList<>();
-        boolean finalAnswer=true;
-        
+        int finalReverse=0;
+        int number = x;
 
-        if (x<0){
-            finalAnswer=false;
-
-            return finalAnswer;
+        if(x < 0){
+            return false;
         }
 
-        while (x > 0){
-            digitArray.add(0, x % 10);
-            x = x / 10;
+        while (number !=0){
+            finalReverse= (finalReverse * 10) + (number % 10);
+            number= number /10;
         }
-        int arraySize=digitArray.size();
 
-        if (arraySize>0){
-            for (int i=0;i<digitArray.size();i++){
-                if (digitArray.get(i) != digitArray.get(arraySize -i-1)){
-                    finalAnswer=false;
-                }
-            }
-        }
-        return finalAnswer;
+        return (finalReverse == x);
     }
 }
